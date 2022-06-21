@@ -40,7 +40,7 @@ CRIAR  TABELA ` usuários` (
 --
 
 INSERIR  EM ` usuarios` ( ` nome` , ` nascimento` , ` email` , ` senha` ) VALORES _ _ _ _
-( ' Victor Antunes Vieira ' , ' 1990-11-28 ' , ' vicvrcvieira@hotmail.com ' , ' teste ' );
+( ' Sara Matos de Oliveira ' , ' 2005-14-03 ' , ' sarahclymatos@gmail.com ' , ' teste ' );
 
 --
 -- Índices para tabelas despejadas
