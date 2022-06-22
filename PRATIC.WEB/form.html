@@ -1,90 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
-    <head>
-        <!-- Metadados -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+<head lang="pt-br">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet">
+	<title>formulário</title>
 
-        <!-- Título da página (aparece na aba) -->
-        <title>Cadastro</title>
-    </head>
-
-    <body>  
-
-        <!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
-        <div>
-            <h1 id="titulo">Cadastro</h1> <br>
-            <p id="subtitulo">Complete suas informações</p>
-            <br>
-        </div>
-
-        <!-- Início do formulário -->
-        <form>
-
-            <fieldset class="grupo">
-                <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
-                <div class="campo">
-                    <label for="nome"><strong>Nome</strong></label>
-                    <input type="text" name="nome" id="nome" required>
-                </div>
-
-                
-            </fieldset> 
-
-            <!-- Campo de desenvolvimento web com 3 opções de botões selecionáveis (radio button) e css de classe "campo" -->
-            <div class="campo">
-                <label><strong>Gênero:</strong></label>
-                <label>
-                    <input type="radio" name="genero" value="feminino" checked>Feminino
-                </label>
-                <label>
-                    <input type="radio" name="genero" value="masculino">Masculino
-                </label>
-                <label>
-                    <input type="radio" name="genero" value="nenhum">Nenhuma das opções
-                </label>
-            </div>
-
-            <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
-            <div class="campo">
-                <label for="senioridade"><strong>Qual o seu estado?</strong></label>
-                <select id="senioridade" required>
-                  <option selected disabled value="AC">Selecione</option>
-                  <option value="AC">AC</option>
-                  <option value="SP">SP</option>
-                  <option value="MA">MA</option>
-                  <option value="AL">AL</option>
-                  <option value="BA">BA</option>
-                    
-                </select>
-            </div>
-
-            <fieldset class="grupo">
-                <!-- Campo de tecnologias para escolha de 1 ou mais opções para marcar (checkbox) e css de classe "campo" -->
-                <div id="check">
-                    <label><strong>Quantos irmãos vocês tem?</strong></label><br><br>
-            
-	                <input type="checkbox" id="irmao1" name="irmao[1]" value="um irmão">
-	                <label for="irmao1">Apenas um irmão</label>
-	            
-	                <input type="checkbox" id="irmao2" name="irmao[2]" value="dois irmãos">
-	                <label for="irmao2">Dois irmãos</label>
-	            
-	                <input type="checkbox" id="irmao3" name="irmao[3]" value="mais de três irmãos">
-	                <label for="irmao3">Mais de três irmãos</label>
-	                
-            </fieldset>
+</head>
 
 
-            <!-- Botão para enviar o formulário -->
-            <button class="botao" type="submit" onsubmit="">Concluído</button>            
+<body>
+	<div id="ma">
+		<img id="lo" src="imagens/logo.png">
+		<img id="menu" src="imagens/menu.png">
+	</div>
+	<br>
+	<!--Criando um formulário-->
+	<form action="cadastro.php" method="post">
+		<!--Criando um campo para o nome no formulário-->
+		<label for="name">Nome completo:</label>
+		<br>
+		<input type="text" id="name" name="name" value="Teste">
+		<br><br>
+		<!--Criando um campo de data de nascimento-->
+		<label for="nascimento">Data de nascimento:</label>
+		<br>
+		<input type="date" id="date" name="date">
+		<br><br>
+		<!--Criando um campo para um e-mail-->
+		<label for="email">E-mail:</label>
+		<br>
+		<input type="email" id="email" name="email">
+		<br><br>
+		<!--Criando um campo para uma senha-->
+		<label for="senha">Senha:</label>
+		<br>
+		<input type="password" id="password" name="password">
+		<br><br>
+		<!--Botão para acionar o action do formulário-->
+		<input type="submit" name="enviar" id="enviar" value="Enviar" onclick="return validacao()">
+	</form>
+	<div id="logos">
+		<a href="https://www.tiktok.com/pt-BR/"><img class="im" src="imagens/tiktok.png" alt="Logo do Tiktok"></a>
+		<a href="https://twitter.com/home"><img class="im" src="imagens/twitter.png" alt="Logo do Twitter"></a>
+		<a href="https://pt-br.facebook.com"><img class="im" src="imagens/facebook.png" alt="Logo do Facebook"></a>
+		<a href="https://www.instagram.com"><img class="im" src="imagens/instagram.png" alt="Logo do Instagran"></a>
+	</div>
 
-        </form>
+	<footer>
+		<p id="oi">Copyright © 2022</p>
+	</footer>
 
-    </body>
+	<script type="text/javascript">
+
+		function validacao() {
+			if ((document.getElementById("name").value.length == 0)) {
+				alert("Por favor, preencha o campo nome.")
+				return false
+			} else {
+				document.getElementById("enviar").submit()
+				return true
+			}
+		}
+
+	</script>
+
+</body>
 
 </html>
